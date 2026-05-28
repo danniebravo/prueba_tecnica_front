@@ -1,0 +1,36 @@
+{
+  "incidencias": [
+    {
+      "id": "1",
+      "titulo": "Error 500 al guardar perfil",
+      "descripcion": "Al actualizar el perfil de usuario el servidor responde con error 500 intermitentemente.",
+      "estado": "Pendiente",
+      "prioridad": "Alta",
+      "createdAt": "2026-05-20T14:30:00.000Z"
+    },
+    {
+      "id": "2",
+      "titulo": "Login no recuerda el último usuario",
+      "descripcion": "El campo de usuario en la pantalla de login no se autocompleta con la última sesión válida.",
+      "estado": "En Progreso",
+      "prioridad": "Media",
+      "createdAt": "2026-05-22T09:15:00.000Z"
+    },
+    {
+      "id": "3",
+      "titulo": "Tipografía borrosa en Safari",
+      "descripcion": "En Safari 17 los títulos del dashboard se ven pixelados al hacer zoom.",
+      "estado": "Resuelto",
+      "prioridad": "Baja",
+      "createdAt": "2026-05-15T11:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "titulo": "Notificaciones duplicadas por correo",
+      "descripcion": "Al crear una incidencia se envían dos correos al equipo de soporte en lugar de uno.",
+      "estado": "Pendiente",
+      "prioridad": "Media",
+      "createdAt": "2026-05-25T16:45:00.000Z"
+    }
+  ]
+}
