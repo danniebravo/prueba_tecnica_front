@@ -3,7 +3,7 @@ import { http } from './http';
 const RECURSO = '/incidencias';
 
 export function listarIncidencias(opts) {
-  return http.get(`${RECURSO}?_sort=createdAt&_order=desc`, opts);
+  return http.get(`${RECURSO}?_sort=-createdAt`, opts);
 }
 
 export function crearIncidencia(datos) {
