@@ -36,3 +36,7 @@ pnpm-debug.log*
 
 # Archivos del enunciado de la prueba
 ISSUE TRACKER.txt
+
+# Artefactos de pruebas E2E
+.playwright-mcp/
+*.screenshot.png
