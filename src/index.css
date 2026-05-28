@@ -2,6 +2,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-base-dark: #0b1220;
+  --color-brand-300: #5b9bd6;
+  --color-brand-500: #3b82c4;
+  --color-brand-600: #2d6fa8;
+  --color-brand-700: #1e4e78;
+}
+
 html,
 body,
 #root {
@@ -18,18 +26,18 @@ body {
 }
 
 html.dark body {
-  background-color: #020617;
-  color: #e2e8f0;
+  background-color: #0b1220;
+  color: #f1f5f9;
 }
 
 html.dark .swal2-popup {
-  background: #0f172a !important;
-  color: #e2e8f0 !important;
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
 }
 
 html.dark .swal2-title,
 html.dark .swal2-html-container {
-  color: #e2e8f0 !important;
+  color: #f1f5f9 !important;
 }
 
 html.dark .swal2-icon.swal2-warning {

@@ -1,5 +1,7 @@
 # Sistema de Gestión de Incidencias
 
+**Demo en producción:** https://frabjous-sunshine-ac57b7.netlify.app
+
 SPA en React + Vite para que un equipo de soporte técnico gestione reportes de errores (incidencias). Permite registrar, listar, editar y eliminar incidencias contra una API mock, con autenticación simulada por LocalStorage.
 
 Proyecto desarrollado como prueba técnica para **CESDE**.
@@ -12,6 +14,7 @@ Proyecto desarrollado como prueba técnica para **CESDE**.
 - **SweetAlert2** para la confirmación de eliminación y los toasts de éxito/error.
 - **UI responsiva** con Tailwind CSS (mobile y desktop).
 - **Modo claro y oscuro** con toggle y preferencia persistida en LocalStorage (respeta el tema del sistema en la primera visita).
+- **Permisos por rol**: cada rol del login tiene un conjunto distinto de acciones permitidas (ver tabla más abajo).
 - **Manejo de carga y errores** en cada petición HTTP, con feedback amigable al usuario.
 
 ## Stack tecnológico
@@ -81,6 +84,17 @@ La app se abrirá automáticamente en `http://localhost:5173`. La API queda disp
    - **Eliminar** pide confirmación con SweetAlert2 antes de borrar.
 4. El botón **Cerrar sesión** limpia el LocalStorage y vuelve al login.
 
+## Permisos por rol
+
+| Rol | Crear | Editar | Eliminar |
+|---|:---:|:---:|:---:|
+| Administrador | ✅ | ✅ | ✅ |
+| Soporte | ✅ | ✅ | ❌ |
+| Desarrollador | ❌ | ✅ | ❌ |
+| Analista | ❌ | ❌ | ❌ (solo lectura) |
+
+La matriz vive en `src/utils/permisos.js`. La UI esconde los botones que el rol no puede usar y bloquea la acción aunque el handler se llame directamente.
+
 ## Modelo de incidencia
 
 ```json
@@ -106,4 +120,6 @@ Los commits siguen el estándar **Conventional Commits** (`feat:`, `fix:`, `chor
 
 ## Despliegue
 
-Pendiente. El proyecto se ejecuta de forma local con los pasos descritos arriba.
+El frontend está desplegado en Netlify: https://frabjous-sunshine-ac57b7.netlify.app
+
+Cada push a `main` regenera el deploy automáticamente.

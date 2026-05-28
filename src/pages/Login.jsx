@@ -29,14 +29,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen grid place-items-center px-4 py-8 bg-gradient-to-br from-slate-50 via-indigo-50 to-violet-50 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 relative">
+    <div className="min-h-screen grid place-items-center px-4 py-8 bg-slate-50 dark:bg-base-dark relative">
       <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
 
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-indigo-500/30">
+          <div className="inline-flex w-14 h-14 rounded-2xl bg-brand-600 text-white items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-brand-600/30">
             IT
           </div>
           <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight">
@@ -49,7 +49,7 @@ export default function Login() {
 
         <form
           onSubmit={enviar}
-          className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-black/30 p-6 sm:p-8 space-y-5"
+          className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-black/30 p-6 sm:p-8 space-y-5"
           noValidate
         >
           <div>
@@ -66,7 +66,7 @@ export default function Login() {
               onChange={(e) => setNombre(e.target.value)}
               placeholder="Ej: Daniel Bravo"
               autoFocus
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-shadow"
             />
           </div>
 
@@ -81,7 +81,7 @@ export default function Login() {
               id="rol"
               value={rol}
               onChange={(e) => setRol(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
             >
               {ROLES.map((r) => (
                 <option key={r} value={r}>
@@ -93,7 +93,7 @@ export default function Login() {
 
           {error && (
             <p
-              className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900 rounded-md px-3 py-2"
+              className="text-sm text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-500/15 border border-red-200 dark:border-red-500/30 rounded-md px-3 py-2"
               role="alert"
             >
               {error}
@@ -102,7 +102,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-indigo-500/20 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+            className="w-full rounded-lg bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-300 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/20 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-base-dark"
           >
             Ingresar
           </button>
