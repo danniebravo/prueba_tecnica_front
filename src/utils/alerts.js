@@ -26,12 +26,13 @@ export function confirmarEliminacion(titulo) {
 export function notificarExito(mensaje) {
   return Swal.fire({
     toast: true,
-    position: 'top-end',
+    position: 'top',
     icon: 'success',
     title: mensaje,
     showConfirmButton: false,
-    timer: 3500,
+    timer: 6000,
     timerProgressBar: true,
+    width: '24rem',
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer);
       toast.addEventListener('mouseleave', Swal.resumeTimer);
