@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 
 const colores = {
-  primario: '#4f46e5',
+  primario: '#3276a9',
   peligro: '#dc2626',
   exito: '#059669',
 };
@@ -14,11 +14,11 @@ function esModoOscuro() {
 }
 
 function fondoBase() {
-  return esModoOscuro() ? '#0f172a' : '#ffffff';
+  return esModoOscuro() ? '#0e2a5f' : '#ffffff';
 }
 
 function colorTexto() {
-  return esModoOscuro() ? '#e2e8f0' : '#0f172a';
+  return esModoOscuro() ? '#d0d8de' : '#0e2a5f';
 }
 
 export function confirmarEliminacion(titulo) {

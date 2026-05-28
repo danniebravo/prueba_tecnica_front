@@ -18,7 +18,7 @@ export default function Modal({ abierto, titulo, onCerrar, children }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-ocean-900/60 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-titulo"
@@ -26,11 +26,11 @@ export default function Modal({ abierto, titulo, onCerrar, children }) {
         if (e.target === e.currentTarget) onCerrar?.();
       }}
     >
-      <div className="w-full sm:max-w-lg bg-white dark:bg-slate-900 rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[90vh] flex flex-col border border-transparent dark:border-slate-800">
-        <header className="flex items-center justify-between gap-4 px-5 py-4 border-b border-slate-200 dark:border-slate-800">
+      <div className="w-full sm:max-w-lg bg-white dark:bg-ocean-800 rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[90vh] flex flex-col border border-transparent dark:border-ocean-600/40">
+        <header className="flex items-center justify-between gap-4 px-5 py-4 border-b border-ocean-50 dark:border-ocean-600/40">
           <h3
             id="modal-titulo"
-            className="text-base font-semibold text-slate-900 dark:text-slate-50"
+            className="text-base font-semibold text-ocean-800 dark:text-ocean-50"
           >
             {titulo}
           </h3>
@@ -38,7 +38,7 @@ export default function Modal({ abierto, titulo, onCerrar, children }) {
             type="button"
             onClick={onCerrar}
             aria-label="Cerrar"
-            className="rounded-md p-1 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="rounded-md p-1 text-ocean-600 dark:text-ocean-200 hover:bg-ocean-50/60 dark:hover:bg-ocean-700 hover:text-ocean-800 dark:hover:text-ocean-50 focus:outline-none focus:ring-2 focus:ring-ocean-500"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

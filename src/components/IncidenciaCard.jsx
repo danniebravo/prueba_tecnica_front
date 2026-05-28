@@ -16,12 +16,12 @@ export default function IncidenciaCard({ incidencia, onEditar, onEliminar }) {
   const { titulo, descripcion, estado, prioridad, createdAt } = incidencia;
 
   return (
-    <article className="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-200">
-      <h3 className="text-base font-semibold text-slate-900 dark:text-slate-50 leading-snug">
+    <article className="group flex flex-col rounded-xl border border-ocean-50 dark:border-ocean-600/40 bg-white dark:bg-ocean-800 p-5 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:border-ocean-200 dark:hover:border-ocean-200/60 transition-all duration-200">
+      <h3 className="text-base font-semibold text-ocean-800 dark:text-ocean-50 leading-snug">
         {titulo}
       </h3>
 
-      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 line-clamp-3">
+      <p className="mt-2 text-sm text-ocean-600 dark:text-ocean-100/80 line-clamp-3">
         {descripcion}
       </p>
 
@@ -32,15 +32,15 @@ export default function IncidenciaCard({ incidencia, onEditar, onEliminar }) {
         </Badge>
       </div>
 
-      <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-        <span className="text-xs text-slate-400 dark:text-slate-500">
+      <div className="mt-4 pt-4 border-t border-ocean-50 dark:border-ocean-600/40 flex items-center justify-between gap-2">
+        <span className="text-xs text-ocean-600/70 dark:text-ocean-200/70">
           {formatearFecha(createdAt)}
         </span>
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => onEditar?.(incidencia)}
-            className="inline-flex items-center gap-1 rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="inline-flex items-center gap-1 rounded-md border border-ocean-50 dark:border-ocean-600 bg-white dark:bg-ocean-900 px-2.5 py-1.5 text-xs font-medium text-ocean-800 dark:text-ocean-50 hover:bg-ocean-50/50 dark:hover:bg-ocean-700 focus:outline-none focus:ring-2 focus:ring-ocean-500"
             aria-label="Editar incidencia"
           >
             <svg

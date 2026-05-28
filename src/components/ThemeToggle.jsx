@@ -9,7 +9,7 @@ export default function ThemeToggle() {
       onClick={alternar}
       aria-label={esOscuro ? 'Activar modo claro' : 'Activar modo oscuro'}
       title={esOscuro ? 'Modo claro' : 'Modo oscuro'}
-      className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-colors dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+      className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-ocean-50 dark:border-ocean-600 bg-white dark:bg-ocean-800 text-ocean-800 dark:text-ocean-100 hover:bg-ocean-50/60 dark:hover:bg-ocean-700 transition-colors focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-ocean-900"
     >
       {esOscuro ? (
         <svg

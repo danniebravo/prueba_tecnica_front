@@ -2,6 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-ocean-50: #d0d8de;
+  --color-ocean-100: #afcde5;
+  --color-ocean-200: #87b1c9;
+  --color-ocean-500: #3276a9;
+  --color-ocean-600: #535d87;
+  --color-ocean-800: #0e2a5f;
+  --color-ocean-900: #041243;
+}
+
 html,
 body,
 #root {
@@ -12,24 +22,24 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #f5f8fb;
+  color: #0e2a5f;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 html.dark body {
-  background-color: #020617;
-  color: #e2e8f0;
+  background-color: #041243;
+  color: #d0d8de;
 }
 
 html.dark .swal2-popup {
-  background: #0f172a !important;
-  color: #e2e8f0 !important;
+  background: #0e2a5f !important;
+  color: #d0d8de !important;
 }
 
 html.dark .swal2-title,
 html.dark .swal2-html-container {
-  color: #e2e8f0 !important;
+  color: #d0d8de !important;
 }
 
 html.dark .swal2-icon.swal2-warning {

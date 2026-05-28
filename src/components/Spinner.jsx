@@ -5,8 +5,8 @@ export default function Spinner({ texto = 'Cargando…' }) {
       role="status"
       aria-live="polite"
     >
-      <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-slate-300 dark:border-slate-700 border-t-indigo-600 dark:border-t-indigo-400" />
-      <span className="text-sm text-slate-500 dark:text-slate-400">
+      <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-ocean-50 dark:border-ocean-600 border-t-ocean-500 dark:border-t-ocean-100" />
+      <span className="text-sm text-ocean-600 dark:text-ocean-200">
         {texto}
       </span>
     </div>
