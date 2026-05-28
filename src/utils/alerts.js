@@ -30,8 +30,12 @@ export function notificarExito(mensaje) {
     icon: 'success',
     title: mensaje,
     showConfirmButton: false,
-    timer: 2200,
+    timer: 3500,
     timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
   });
 }
 
