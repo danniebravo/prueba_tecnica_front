@@ -30,7 +30,7 @@ export function notificarExito(mensaje) {
     icon: 'success',
     title: mensaje,
     showConfirmButton: false,
-    timer: 12000,
+    timer: 30000,
     timerProgressBar: true,
     width: '24rem',
     didOpen: (toast) => {
