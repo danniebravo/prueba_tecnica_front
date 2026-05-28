@@ -1,10 +1,25 @@
 import Swal from 'sweetalert2';
 
 const colores = {
-  primario: '#0f172a',
+  primario: '#4f46e5',
   peligro: '#dc2626',
   exito: '#059669',
 };
+
+function esModoOscuro() {
+  return (
+    typeof document !== 'undefined' &&
+    document.documentElement.classList.contains('dark')
+  );
+}
+
+function fondoBase() {
+  return esModoOscuro() ? '#0f172a' : '#ffffff';
+}
+
+function colorTexto() {
+  return esModoOscuro() ? '#e2e8f0' : '#0f172a';
+}
 
 export function confirmarEliminacion(titulo) {
   return Swal.fire({
@@ -20,6 +35,8 @@ export function confirmarEliminacion(titulo) {
     cancelButtonColor: colores.primario,
     reverseButtons: true,
     focusCancel: true,
+    background: fondoBase(),
+    color: colorTexto(),
   });
 }
 
@@ -33,6 +50,8 @@ export function notificarExito(mensaje) {
     timer: 90000,
     timerProgressBar: true,
     width: '24rem',
+    background: fondoBase(),
+    color: colorTexto(),
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer);
       toast.addEventListener('mouseleave', Swal.resumeTimer);
@@ -46,5 +65,7 @@ export function notificarError(mensaje) {
     title: 'Algo salió mal',
     text: mensaje || 'Ocurrió un error inesperado. Intenta de nuevo.',
     confirmButtonColor: colores.primario,
+    background: fondoBase(),
+    color: colorTexto(),
   });
 }

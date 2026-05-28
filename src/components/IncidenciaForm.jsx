@@ -8,6 +8,12 @@ const valoresPorDefecto = {
   prioridad: PRIORIDADES[1],
 };
 
+const claseInput =
+  'w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500';
+
+const claseLabel =
+  'block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5';
+
 export default function IncidenciaForm({
   inicial,
   enviando = false,
@@ -52,10 +58,7 @@ export default function IncidenciaForm({
   return (
     <form onSubmit={enviar} className="space-y-4" noValidate>
       <div>
-        <label
-          htmlFor="titulo"
-          className="block text-sm font-medium text-slate-700 mb-1"
-        >
+        <label htmlFor="titulo" className={claseLabel}>
           Título
         </label>
         <input
@@ -64,18 +67,17 @@ export default function IncidenciaForm({
           value={valores.titulo}
           onChange={actualizar('titulo')}
           autoFocus
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          className={claseInput}
         />
         {errores.titulo && (
-          <p className="mt-1 text-xs text-red-600">{errores.titulo}</p>
+          <p className="mt-1 text-xs text-red-600 dark:text-red-400">
+            {errores.titulo}
+          </p>
         )}
       </div>
 
       <div>
-        <label
-          htmlFor="descripcion"
-          className="block text-sm font-medium text-slate-700 mb-1"
-        >
+        <label htmlFor="descripcion" className={claseLabel}>
           Descripción
         </label>
         <textarea
@@ -83,26 +85,25 @@ export default function IncidenciaForm({
           rows={4}
           value={valores.descripcion}
           onChange={actualizar('descripcion')}
-          className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+          className={claseInput}
         />
         {errores.descripcion && (
-          <p className="mt-1 text-xs text-red-600">{errores.descripcion}</p>
+          <p className="mt-1 text-xs text-red-600 dark:text-red-400">
+            {errores.descripcion}
+          </p>
         )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="estado"
-            className="block text-sm font-medium text-slate-700 mb-1"
-          >
+          <label htmlFor="estado" className={claseLabel}>
             Estado
           </label>
           <select
             id="estado"
             value={valores.estado}
             onChange={actualizar('estado')}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+            className={claseInput}
           >
             {ESTADOS.map((opt) => (
               <option key={opt} value={opt}>
@@ -113,17 +114,14 @@ export default function IncidenciaForm({
         </div>
 
         <div>
-          <label
-            htmlFor="prioridad"
-            className="block text-sm font-medium text-slate-700 mb-1"
-          >
+          <label htmlFor="prioridad" className={claseLabel}>
             Prioridad
           </label>
           <select
             id="prioridad"
             value={valores.prioridad}
             onChange={actualizar('prioridad')}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
+            className={claseInput}
           >
             {PRIORIDADES.map((opt) => (
               <option key={opt} value={opt}>
@@ -139,14 +137,14 @@ export default function IncidenciaForm({
           type="button"
           onClick={onCancelar}
           disabled={enviando}
-          className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+          className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50"
         >
           Cancelar
         </button>
         <button
           type="submit"
           disabled={enviando}
-          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 disabled:opacity-50"
+          className="rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {enviando ? 'Guardando…' : textoBotonEnviar}
         </button>
