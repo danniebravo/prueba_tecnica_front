@@ -1,12 +1,22 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+
 export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-3xl font-semibold text-slate-800">
-          Sistema de Gestión de Incidencias
-        </h1>
-        <p className="mt-2 text-slate-500">Cargando aplicación…</p>
-      </div>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
