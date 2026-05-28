@@ -11,6 +11,7 @@ Proyecto desarrollado como prueba técnica para **CESDE**.
 - **CRUD completo** de incidencias contra una API mock local.
 - **SweetAlert2** para la confirmación de eliminación y los toasts de éxito/error.
 - **UI responsiva** con Tailwind CSS (mobile y desktop).
+- **Modo claro y oscuro** con toggle y preferencia persistida en LocalStorage (respeta el tema del sistema en la primera visita).
 - **Manejo de carga y errores** en cada petición HTTP, con feedback amigable al usuario.
 
 ## Stack tecnológico
