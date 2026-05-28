@@ -5,11 +5,22 @@ import IncidenciaList from '../components/IncidenciaList';
 import Modal from '../components/Modal';
 import Spinner from '../components/Spinner';
 import { useIncidencias } from '../hooks/useIncidencias';
-import { notificarError, notificarExito } from '../utils/alerts';
+import {
+  confirmarEliminacion,
+  notificarError,
+  notificarExito,
+} from '../utils/alerts';
 
 export default function Dashboard() {
-  const { incidencias, cargando, error, recargar, crear, actualizar } =
-    useIncidencias();
+  const {
+    incidencias,
+    cargando,
+    error,
+    recargar,
+    crear,
+    actualizar,
+    eliminar,
+  } = useIncidencias();
   const [modalAbierto, setModalAbierto] = useState(false);
   const [incidenciaEnEdicion, setIncidenciaEnEdicion] = useState(null);
   const [enviando, setEnviando] = useState(false);
@@ -34,6 +45,17 @@ export default function Dashboard() {
     if (enviando) return;
     setModalAbierto(false);
     setIncidenciaEnEdicion(null);
+  };
+
+  const confirmarYEliminar = async (incidencia) => {
+    const resultado = await confirmarEliminacion(incidencia.titulo);
+    if (!resultado.isConfirmed) return;
+    try {
+      await eliminar(incidencia.id);
+      notificarExito('Incidencia eliminada');
+    } catch (err) {
+      notificarError(err.message);
+    }
   };
 
   const guardar = async (datos) => {
@@ -114,6 +136,7 @@ export default function Dashboard() {
         <IncidenciaList
           incidencias={incidencias}
           onEditar={abrirParaEditar}
+          onEliminar={confirmarYEliminar}
         />
       )}
 
