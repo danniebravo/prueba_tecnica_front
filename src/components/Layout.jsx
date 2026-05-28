@@ -12,18 +12,18 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#f5f8fb] to-[#e6eef5] dark:from-ocean-900 dark:to-ocean-800">
-      <header className="sticky top-0 z-20 bg-white/80 dark:bg-ocean-900/80 backdrop-blur border-b border-ocean-50 dark:border-ocean-800">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-base-dark">
+      <header className="sticky top-0 z-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-ocean-500 to-ocean-600 text-white grid place-items-center font-bold shadow-sm shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-600 text-white grid place-items-center font-bold shadow-sm shrink-0">
               IT
             </div>
             <div className="min-w-0">
-              <h1 className="text-base sm:text-lg font-semibold text-ocean-800 dark:text-ocean-50 leading-tight truncate">
+              <h1 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-slate-50 leading-tight truncate">
                 Issue Tracker
               </h1>
-              <p className="text-xs text-ocean-600 dark:text-ocean-200 leading-tight">
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-tight">
                 Gestión de incidencias
               </p>
             </div>
@@ -31,10 +31,10 @@ export default function Layout() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="hidden sm:block text-right">
-              <p className="text-sm font-medium text-ocean-800 dark:text-ocean-50 leading-tight">
+              <p className="text-sm font-medium text-slate-900 dark:text-slate-50 leading-tight">
                 {session?.nombre}
               </p>
-              <p className="text-xs text-ocean-600 dark:text-ocean-200 leading-tight">
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-tight">
                 {session?.rol}
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function Layout() {
             <button
               type="button"
               onClick={cerrarSesion}
-              className="inline-flex items-center gap-1.5 rounded-md bg-ocean-800 dark:bg-ocean-100 px-3 py-2 text-sm font-medium text-white dark:text-ocean-900 hover:bg-ocean-900 dark:hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-ocean-900"
+              className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-base-dark"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

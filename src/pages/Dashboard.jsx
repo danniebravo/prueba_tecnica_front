@@ -84,23 +84,23 @@ export default function Dashboard() {
       <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-ocean-800 dark:text-ocean-50 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight">
               Incidencias
             </h2>
             {!cargando && !error && (
-              <span className="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-2 rounded-full bg-ocean-100 dark:bg-ocean-500/20 text-ocean-500 dark:text-ocean-100 text-xs font-semibold">
+              <span className="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-2 rounded-full bg-brand-500/15 text-brand-700 dark:text-brand-300 text-xs font-semibold">
                 {total}
               </span>
             )}
           </div>
-          <p className="text-sm text-ocean-600 dark:text-ocean-200 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             Reportes de errores registrados por el equipo de soporte
           </p>
         </div>
         <button
           type="button"
           onClick={abrirParaCrear}
-          className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-ocean-500 to-ocean-600 hover:from-ocean-500/90 hover:to-ocean-800 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-ocean-500/20 transition-all focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:ring-offset-2 dark:focus:ring-offset-ocean-900"
+          className="inline-flex items-center gap-2 rounded-lg bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-300 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/20 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-base-dark"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@ export default function Dashboard() {
             <button
               type="button"
               onClick={() => recargar()}
-              className="rounded-lg bg-ocean-800 dark:bg-ocean-100 px-4 py-2 text-sm font-medium text-white dark:text-ocean-900 hover:bg-ocean-900 dark:hover:bg-white"
+              className="rounded-lg bg-brand-600 hover:bg-brand-700 px-4 py-2 text-sm font-medium text-white"
             >
               Reintentar
             </button>
@@ -146,7 +146,7 @@ export default function Dashboard() {
             <button
               type="button"
               onClick={abrirParaCrear}
-              className="rounded-lg bg-gradient-to-r from-ocean-500 to-ocean-600 hover:from-ocean-500/90 hover:to-ocean-800 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-ocean-500/20"
+              className="rounded-lg bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-300 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brand-600/20"
             >
               Crear incidencia
             </button>

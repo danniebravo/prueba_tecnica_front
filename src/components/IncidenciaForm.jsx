@@ -9,10 +9,10 @@ const valoresPorDefecto = {
 };
 
 const claseInput =
-  'w-full rounded-lg border border-ocean-50 dark:border-ocean-600 bg-white dark:bg-ocean-900 text-ocean-800 dark:text-ocean-50 px-3 py-2.5 text-sm placeholder:text-ocean-600/60 dark:placeholder:text-ocean-200/60 focus:outline-none focus:ring-2 focus:ring-ocean-500 focus:border-ocean-500';
+  'w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-3 py-2.5 text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500';
 
 const claseLabel =
-  'block text-sm font-medium text-ocean-800 dark:text-ocean-50 mb-1.5';
+  'block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5';
 
 export default function IncidenciaForm({
   inicial,
@@ -137,14 +137,14 @@ export default function IncidenciaForm({
           type="button"
           onClick={onCancelar}
           disabled={enviando}
-          className="rounded-lg border border-ocean-50 dark:border-ocean-600 bg-white dark:bg-ocean-900 px-4 py-2 text-sm font-medium text-ocean-800 dark:text-ocean-50 hover:bg-ocean-50/50 dark:hover:bg-ocean-700 disabled:opacity-50"
+          className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50"
         >
           Cancelar
         </button>
         <button
           type="submit"
           disabled={enviando}
-          className="rounded-lg bg-gradient-to-r from-ocean-500 to-ocean-600 hover:from-ocean-500/90 hover:to-ocean-800 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-ocean-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="rounded-lg bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-300 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brand-600/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {enviando ? 'Guardando…' : textoBotonEnviar}
         </button>
