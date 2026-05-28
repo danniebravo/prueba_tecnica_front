@@ -77,23 +77,45 @@ export default function Dashboard() {
     }
   };
 
+  const total = incidencias.length;
+
   return (
     <section>
-      <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
+      <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
         <div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-slate-900">
-            Incidencias
-          </h2>
-          <p className="text-sm text-slate-500">
+          <div className="flex items-center gap-2">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight">
+              Incidencias
+            </h2>
+            {!cargando && !error && (
+              <span className="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-2 rounded-full bg-indigo-100 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-medium">
+                {total}
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             Reportes de errores registrados por el equipo de soporte
           </p>
         </div>
         <button
           type="button"
           onClick={abrirParaCrear}
-          className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+          className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-indigo-500/20 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
         >
-          <span className="text-lg leading-none">+</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-4 h-4"
+            aria-hidden="true"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
           Nueva incidencia
         </button>
       </div>
@@ -108,7 +130,7 @@ export default function Dashboard() {
             <button
               type="button"
               onClick={() => recargar()}
-              className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+              className="rounded-lg bg-slate-900 dark:bg-slate-100 px-4 py-2 text-sm font-medium text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-white"
             >
               Reintentar
             </button>
@@ -124,7 +146,7 @@ export default function Dashboard() {
             <button
               type="button"
               onClick={abrirParaCrear}
-              className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+              className="rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-500/20"
             >
               Crear incidencia
             </button>

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-html, body, #root {
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -10,4 +14,25 @@ body {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: #f8fafc;
   color: #0f172a;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background-color: #020617;
+  color: #e2e8f0;
+}
+
+html.dark .swal2-popup {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .swal2-title,
+html.dark .swal2-html-container {
+  color: #e2e8f0 !important;
+}
+
+html.dark .swal2-icon.swal2-warning {
+  border-color: #f59e0b;
+  color: #fbbf24;
 }
